@@ -8,9 +8,12 @@
 
 public class Pattern4 {
     public static void main(String[] args) {
-        int n = 4;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n - i; j++) {
+
+        System.out.println("Enter the number of rows for the diamond pattern: ");
+        int rows = 4;
+
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= rows - i; j++) {
                 System.out.print(" ");
             }
             for (int k = 1; k <= 2 * i - 1; k++) {
@@ -18,8 +21,9 @@ public class Pattern4 {
             }
             System.out.println();
         }
-        for (int i = n - 1; i >= 1; i--) {
-            for (int j = 1; j <= n - i; j++) {
+
+        for (int i = rows - 1; i >= 1; i--) {
+            for (int j = 1; j <= rows - i; j++) {
                 System.out.print(" ");
             }
             for (int k = 1; k <= 2 * i - 1; k++) {
