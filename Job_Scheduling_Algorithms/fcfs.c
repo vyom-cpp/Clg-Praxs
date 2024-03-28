@@ -1,48 +1,27 @@
 #include <stdio.h>
 
 int main() {
-    int n, i, quantum;
+    int n, i;
     printf("Enter the number of processes: ");
     scanf("%d", &n);
 
-    int burst_time[n], remaining_time[n], waiting_time[n], turnaround_time[n];
+    int burst_time[n], waiting_time[n], turnaround_time[n];
 
     printf("Enter the burst times for each process:\n");
     for (i = 0; i < n; i++) {
         printf("Burst time for process %d: ", i + 1);
         scanf("%d", &burst_time[i]);
-        remaining_time[i] = burst_time[i];
     }
 
-    printf("Enter the time quantum: ");
-    scanf("%d", &quantum);
-
-    int time = 0; // Current time
-    while (1) {
-        int done = 1; // Flag to indicate if all processes are done
-
-        for (i = 0; i < n; i++) {
-            if (remaining_time[i] > 0) {
-                done = 0; // There are still remaining processes
-
-                if (remaining_time[i] > quantum) {
-                    time += quantum;
-                    remaining_time[i] -= quantum;
-                } else {
-                    time += remaining_time[i];
-                    waiting_time[i] = time - burst_time[i];
-                    remaining_time[i] = 0;
-                }
-            }
-        }
-
-        if (done == 1) // If all processes are done, break out of the loop
-            break;
+    // Calculate waiting time
+    waiting_time[0] = 0; // First process has 0 waiting time
+    for (i = 1; i < n; i++) {
+        waiting_time[i] = waiting_time[i - 1] + burst_time[i - 1];
     }
 
     // Calculate turnaround time
     for (i = 0; i < n; i++) {
-        turnaround_time[i] = burst_time[i] + waiting_time[i];
+        turnaround_time[i] = waiting_time[i] + burst_time[i];
     }
 
     // Display results
