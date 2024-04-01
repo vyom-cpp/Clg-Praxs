@@ -5,18 +5,23 @@ int main() {
     printf("Enter the number of processes: ");
     scanf("%d", &n);
 
-    int burst_time[n], waiting_time[n], turnaround_time[n];
+    int burst_time[n], arrival_time[n], waiting_time[n], turnaround_time[n];
 
-    printf("Enter the burst times for each process:\n");
+    printf("Enter the burst times and arrival times for each process:\n");
     for (i = 0; i < n; i++) {
         printf("Burst time for process %d: ", i + 1);
         scanf("%d", &burst_time[i]);
+        printf("Arrival time for process %d: ", i + 1);
+        scanf("%d", &arrival_time[i]);
     }
 
     // Calculate waiting time
     waiting_time[0] = 0; // First process has 0 waiting time
     for (i = 1; i < n; i++) {
         waiting_time[i] = waiting_time[i - 1] + burst_time[i - 1];
+        // If the process arrived after the previous one finishes, wait until it arrives
+        if (arrival_time[i] > waiting_time[i])
+            waiting_time[i] = arrival_time[i];
     }
 
     // Calculate turnaround time
@@ -25,9 +30,9 @@ int main() {
     }
 
     // Display results
-    printf("\nProcess\tBurst Time\tWaiting Time\tTurnaround Time\n");
+    printf("\nProcess\tBurst Time\tArrival Time\tWaiting Time\tTurnaround Time\n");
     for (i = 0; i < n; i++) {
-        printf("%d\t%d\t\t%d\t\t%d\n", i + 1, burst_time[i], waiting_time[i], turnaround_time[i]);
+        printf("%d\t%d\t\t%d\t\t%d\t\t%d\n", i + 1, burst_time[i], arrival_time[i], waiting_time[i], turnaround_time[i]);
     }
 
     // Calculate average waiting time
