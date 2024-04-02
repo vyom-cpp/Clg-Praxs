@@ -1,20 +1,23 @@
 public class program_1 {
     public static void main(String[] args) {
-        if (args.length == 0) {
-            System.out.println("No student names provided.");
-            return;
-        }
-
-        int numArgs = args.length;
-        String[] numericStrings = {
-                "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth",
-                "Eleventh", "Twelfth", "Thirteenth", "Fourteenth", "Fifteenth", "Sixteenth", "Seventeenth",
-                "Eighteenth", "Nineteenth", "Twentieth"
-        };
-
-        System.out.println("Number of arguments = " + numArgs);
-        for (int i = 0; i < numArgs; i++) {
-            System.out.println((i + 1) + ": " + numericStrings[i] + " Student Name is = " + args[i]);
-        }
+    int numArgs = args.length;
+    if (numArgs == 0) {
+    System.out.println("No student names provided.");
+    return;
     }
-}
+    System.out.println("Number of arguments = " + numArgs);
+    String[] numericStrings = {
+    "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth",
+    "Eleventh", "Twelfth", "Thirteenth", "Fourteenth", "Fifteenth", "Sixteenth", "Seventeenth",
+    "Eighteenth", "Nineteenth", "Twentieth"
+    };
+    for (int i = 0; i < numArgs; i++) {
+    String studentName = args[i];
+    String ordinal;
+    if (i < 20) {
+    ordinal = numericStrings[i];
+    } else {
+    ordinal = (i + 1) + "th";
+    }
+    System.out.println(ordinal + " Student Name is =" + studentName);
+    }}}

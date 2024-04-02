@@ -1,33 +1,28 @@
-class Rectangle {
-    double width, height;
-
-    Rectangle() {
-        width = height = 1;
+class rectangle{
+    double height;
+    double width;
+    double area, perimeter;
+    rectangle(){
+    width=height=1;
     }
-
-    Rectangle(double w, double h) {
-        width = w;
-        height = h;
+    rectangle(double h,double w){
+    height=h;
+    width=w;
     }
-
-    double getArea() {
-        return width * height;
+    double getArea(){
+    area= height*width;
+    return area;
     }
-
-    double getPerimeter() {
-        return 2 * (width + height);
-    }
-}
-
-public class program_2 {
-    public static void main(String[] args) {
-        Rectangle r1 = new Rectangle(4, 40);
-
-        System.out.println("->For Rectangle 1");
-        System.out.println("Area of R1 is " + r1.getArea() + "\nPerimeter of R1 is " + r1.getPerimeter());
-
-        System.out.println("\n->For rectangle 2");
-        Rectangle r2 = new Rectangle(3.5, 35.9);
-        System.out.println("Area of R2 is " + r2.getArea() + "\nPerimeter of R2 is " + r2.getPerimeter());
-    }
-}
+    double getPerimeter(){
+    perimeter= 2*(height+width);
+    return perimeter;
+    }}
+    public class program_2{
+    public static void main(String[] args){
+    rectangle ob1=new rectangle(40,4);
+    rectangle ob2=new rectangle(35.9,3.5);
+    System.out.println("The area of Rectangle 1: " + ob1.getArea() +" square unit");
+    System.out.println("The Perimeter of Rectangle 1: " + ob1.getPerimeter() + " unit");
+    System.out.println("The area of Rectangle 2: " + ob2.getArea() +" square unit");
+    System.out.println("The Perimeter of Rectangle 2: " + ob2.getPerimeter() + " unit");
+    }}

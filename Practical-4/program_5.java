@@ -41,7 +41,7 @@ class FullTime extends Employee {
 
 public class program_5 {
     public static void main(String[] args) {
-        FullTime fullTime = new FullTime("Karan Shah", 124, 100000);
+        FullTime fullTime = new FullTime("Tony Stark", 124, 100000);
         System.out.println("Full-time employee information is :");
         fullTime.display();
     }
