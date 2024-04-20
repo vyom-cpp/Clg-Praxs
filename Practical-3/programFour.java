@@ -21,7 +21,7 @@ class Employee {
     }
 }
 
-public class program_4 {
+public class programFour {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Employee e1 = new Employee("John", 50000);

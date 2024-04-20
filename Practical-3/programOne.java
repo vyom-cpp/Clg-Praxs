@@ -1,4 +1,4 @@
-public class program_1 {
+public class programOne {
     public static void main(String[] args) {
     int numArgs = args.length;
     if (numArgs == 0) {

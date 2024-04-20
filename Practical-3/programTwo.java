@@ -17,7 +17,7 @@ class rectangle{
     perimeter= 2*(height+width);
     return perimeter;
     }}
-    public class program_2{
+    public class programTwo{
     public static void main(String[] args){
     rectangle ob1=new rectangle(40,4);
     rectangle ob2=new rectangle(35.9,3.5);

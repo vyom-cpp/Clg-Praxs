@@ -27,7 +27,7 @@ class Account {
     }
 }
 
-public class program_7 {
+public class programSeven {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

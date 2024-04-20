@@ -28,7 +28,7 @@ class cartesianPoint {
     }
 }
 
-public class program_3 {
+public class programThree {
     public static void main(String[] args) {
         cartesianPoint p1 = new cartesianPoint(2, 3);
         System.out.println("->For point 1:");

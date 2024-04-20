@@ -22,7 +22,7 @@ class Time {
     }
 }
 
-public class program_5 {
+public class programFive {
     public static void main(String[] args) {
         Time t1 = new Time();
         Time t2 = new Time();
